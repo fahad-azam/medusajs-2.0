@@ -101,7 +101,7 @@ const SideMenu = ({ regions, className }: { regions: HttpTypes.StoreRegion[] | n
                         />
                       </div>
                       <Text className="flex justify-between text-sm text-amber-900 opacity-80">
-                        © {new Date().getFullYear()} Luxura Jewels. All rights reserved.
+                        © {new Date().getFullYear()} Gemsnut.com. All rights reserved.
                       </Text>
                     </div>
                   </div>
