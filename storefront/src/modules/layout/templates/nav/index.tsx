@@ -28,7 +28,7 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-opacity-80 uppercase bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent font-serif font-bold tracking-widest drop-shadow-lg"
               data-testid="nav-store-link"
             >
-              Luxura Jewels
+              Gems Nut
             </LocalizedClientLink>
           </div>
 
