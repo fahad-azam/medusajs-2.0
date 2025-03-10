@@ -1,0 +1,134 @@
+/* index.css */
+
+/* Container for the product rail */
+.product-rail-container {
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header section containing the title and "View all" link */
+.product-rail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 1.5rem;
+}
+
+/* Title of the collection */
+.product-rail-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+/* Grid layout for the products (Centered Layout) */
+.product-rail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+    margin: 0 auto;
+    justify-content: center; /* Ensures cards start from the center */
+    max-width: 90%;
+}
+
+/* Individual product item */
+.product-rail-grid li {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.product-rail-grid li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Product image */
+.product-rail-grid li img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Square images */
+    object-fit: cover;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Product details */
+.product-details {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Product title */
+.product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Product price */
+.product-price {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ff5a5f;
+}
+
+/* Interactive Link Styling */
+.interactive-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.interactive-link:hover {
+    color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .product-rail-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust for tablets */
+    }
+
+    .product-rail-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-rail-grid {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .product-rail-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-rail-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .product-rail-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

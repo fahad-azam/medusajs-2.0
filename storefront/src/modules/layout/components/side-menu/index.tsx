@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Popover, Transition } from "@headlessui/react"
@@ -25,30 +26,26 @@ const SideMenu = ({ regions, className }: { regions: HttpTypes.StoreRegion[] | n
       <div className="flex items-center h-full">
         <Popover className="h-full flex">
           {({ open, close }) => (
-            <>
-              <div className="text-yellow-500 hover:text-yellow-400 uppercase bg-gradient-to-r from-yellow-300 via-gray-300 to-yellow-500 bg-clip-text text-transparent font-bold drop-shadow-[0_4px_6px_rgba(255,215,0,0.4)] relative flex h-full">
-                <Popover.Button
-                  data-testid="nav-menu-button"
-                  className={clx(
-                    "relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none",
-                    "oklch(0.278 0.033 256.848)"
-                  )}
-                >
-                  Menu
-                </Popover.Button>
+            <div
+              className="h-full flex items-center relative"
+              onMouseEnter={toggleState.open}
+              onMouseLeave={toggleState.close}
+            >
+              <div className="text-yellow-500 hover:text-yellow-400 uppercase bg-gradient-to-r from-yellow-300 via-gray-300 to-yellow-500 bg-clip-text text-transparent font-bold drop-shadow-[0_4px_6px_rgba(255,215,0,0.4)]">
+                Menu
               </div>
 
               <Transition
-                show={open}
+                show={toggleState.state}
                 as={Fragment}
                 enter="transition ease-out duration-150"
-                enterFrom="opacity-0"
-                enterTo="opacity-100 backdrop-blur-lg"
+                enterFrom="opacity-0 translate-y-2"
+                enterTo="opacity-100 translate-y-0 backdrop-blur-lg"
                 leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 backdrop-blur-lg"
-                leaveTo="opacity-0"
+                leaveFrom="opacity-100 translate-y-0 backdrop-blur-lg"
+                leaveTo="opacity-0 translate-y-2"
               >
-                <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-64 2xl:w-72 h-[calc(100vh-8rem)] z-30 inset-x-0 text-sm text-ui-fg-on-color m-2">
+                <Popover.Panel className="absolute top-full left-0 flex flex-col w-full pr-4 sm:pr-0 sm:w-64 2xl:w-72 h-[calc(100vh-8rem)] z-30 text-sm text-ui-fg-on-color m-2">
                   <div
                     data-testid="nav-menu-popup"
                     className="flex flex-col h-full bg-yellow-500 bg-opacity-30 backdrop-blur-lg rounded-2xl justify-between p-6 shadow-[0_0_10px_rgba(255,215,0,0.3)] border border-yellow-500/40"
@@ -107,7 +104,7 @@ const SideMenu = ({ regions, className }: { regions: HttpTypes.StoreRegion[] | n
                   </div>
                 </Popover.Panel>
               </Transition>
-            </>
+            </div>
           )}
         </Popover>
       </div>
@@ -116,3 +113,7 @@ const SideMenu = ({ regions, className }: { regions: HttpTypes.StoreRegion[] | n
 }
 
 export default SideMenu
+
+
+
+
