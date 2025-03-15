@@ -1,114 +1,154 @@
+/* Hero Container */
 .hero-container {
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    background-image: url("../../../../../public/images/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .title {
-    padding: 20px 0;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    font-weight: 500;
-    font-size: large;
-  }
-  
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url("https://bucket-production-2cd7.up.railway.app/medusa-media/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.title {
+  padding: 20px 0;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  font-size: large;
+  text-align: center;
+}
+
+/* Slider */
+.slider {
+  width: 80vw;
+  max-width: 900px;
+  overflow: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 251, 251, 0.2);
+  border-radius: 20px;
+  cursor: grab;
+  position: relative;
+  will-change: transform;
+}
+
+.slider .form {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+.slider .form .item {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s ease-out;
+}
+
+/* Tilt Effect */
+.slider .form.left .item .content {
+  transform: rotateY(-3deg) scale(0.97);
+  transition: transform 0.5s ease-out;
+}
+
+.slider .form.right .item .content {
+  transform: rotateY(3deg) scale(0.97);
+  transition: transform 0.5s ease-out;
+}
+
+/* Image Hover */
+.slider .form .item .content:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Arrows - Modern & Elegant */
+/* Arrows - Modern & Circular */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  width: 50px;  /* Ensures perfect circle */
+  height: 50px; /* Ensures perfect circle */
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Hover & Active Effects */
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Left Arrow */
+.arrow.left {
+  left: 15px;
+}
+
+/* Right Arrow */
+.arrow.right {
+  right: 15px;
+}
+
+/* Slide Tracking Dots */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #aaa;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .slider {
-    width: 70vw;
-    overflow: hidden;
-    padding: 50px;
-    box-sizing: border-box;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    cursor: grab;
-    position: relative;
+    width: 90vw;
+    padding: 20px;
   }
-  
-  .slider .form {
-    display: flex;
-    gap: 20px;
-    width: max-content;
-    transition: transform 0.5s ease-out;
-  }
-  
   .slider .form .item {
-    width: 200px;
-    height: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.5s ease-out;
+    width: 150px;
+    height: 250px;
   }
-  
-  /* Tilt Effect */
-  .slider .form.left .item .content {
-    transform: rotateY(-3deg) scale(0.97);
-  }
-  
-  .slider .form.right .item .content {
-    transform: rotateY(3deg) scale(0.97);
-  }
-  
-  /* Image Hover */
-  .slider .form .item .content:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Arrows */
   .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
+    font-size: 22px;
     padding: 10px;
-    border-radius: 50%;
-    transition: background 0.3s ease;
   }
-  
-  .arrow:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  
-  .arrow.left {
-    left: 20px;
-  }
-  
-  .arrow.right {
-    right: 20px;
-  }
-  
-  /* Slide Tracking Dots */
-  .dots-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 8px;
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    background-color: #aaa;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .dot.active {
-    background-color: #fff;
-    transform: scale(1.4);
-  }
-  
+}
