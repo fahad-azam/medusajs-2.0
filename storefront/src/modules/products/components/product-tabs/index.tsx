@@ -97,7 +97,7 @@ const ShippingInfoTab = () => {
           <div>
             <span className="font-semibold">Simple exchanges</span>
             <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
+              Is this not quite right for you? No worries - we&apos;ll exchange your
               product for a new one.
             </p>
           </div>
