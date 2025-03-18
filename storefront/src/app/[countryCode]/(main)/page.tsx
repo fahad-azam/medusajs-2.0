@@ -9,9 +9,9 @@ import SocialMedia from "@modules/home/components/social-media"
 import NewsLetter from "@modules/home/components/news-letter"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Gemsnut.com",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "Gemsnut.com is an online jwellary marketplace that connects buyers with high quality products.",
 }
 
 export default async function Home({
